@@ -16,19 +16,12 @@ const Head = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            // if (searchQuery?.length > 0) {
-            //     getSearchSuggestions();
-            // } else {
-            //     setSuggestions([]);
-            // }
             if (searchCache[searchQuery]) {
                 setSuggestions(searchCache[searchQuery]);
             }
             else {
                 getSearchSuggestions()
             }
-
-
         }, 200);
 
         return () => clearTimeout(timer);
@@ -109,6 +102,7 @@ const Head = () => {
                     src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
                     alt="user-icon-logo"
                 />
+
             </div>
         </div>
     );
